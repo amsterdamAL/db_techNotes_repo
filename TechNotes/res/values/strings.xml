@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tech notes</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="SW">sw</string>
+	<string name="F1">f1</string>
+	<string name="F2">f2</string>
+
+	<string-array name="addyarr1">
+        
+        <item>sw</item>
+        <item>nw</item>
+        <item>se</item>
+        <item>ne</item>
+        <item>N</item>
+        <item>S</item>
+        <item>E</item>
+        <item>W</item>
+        <item> </item>
+    </string-array>
+    
+	<string-array name="addyarr11">
+        <item> </item>
+        <item>sw</item>
+        <item>nw</item>
+        <item>se</item>
+        <item>ne</item>
+        <item>N</item>
+        <item>S</item>
+        <item>E</item>
+        <item>W</item>
+        
+    </string-array>
+	
+	<string-array name="addyarr2">
+        <item>St</item>
+        <item>Av</item>
+        <item>Ter</item>
+        <item>Pl</item>
+        <item>Ln</item>
+        <item>Way</item>
+        <item>Cir</item>
+        <item>Ct</item>
+        <item>Dr</item>
+        <item>Blvd</item>
+        <item>St</item>
+        <item> </item>
+    </string-array>
+    
+	<string-array name="addyarr22">
+        <item> </item>
+        <item>St</item>
+        <item>Av</item>
+        <item>Ter</item>
+        <item>Pl</item>
+        <item>Ln</item>
+        <item>Way</item>
+        <item>Cir</item>
+        <item>Ct</item>
+        <item>Dr</item>
+        <item>Blvd</item>
+        <item>Av</item>
+        <item>St</item>
+        
+    </string-array>
+    
+    
+	<string-array name="addyarr3">
+        <item>  </item>
+        <item>Ca</item>
+        <item>PG</item>
+        <item>FS</item>
+        <item>FPG</item>
+    </string-array>
+    
+	<string-array name="addyarr4">
+        <item>  </item>
+        <item>xbx</item>
+        <item>UV</item>
+        <item>NPG</item>
+        <item>EPG</item>
+        <item>MRB</item>
+        <item>ABB</item>
+        <item>EDX</item>
+        <item>AHJ</item>
+        <item>AHJX</item>
+    </string-array>
+    
+	<string-array name="addyarr5">
+        <item>  </item>
+        <item>xbx</item>
+        <item>UV</item>        
+        <item>NPG</item>
+        <item>EPG</item>
+        <item>MRB</item>
+        <item>ABB</item>
+        <item>EDX</item>
+        <item>AHJ</item>
+        <item>AHJX</item>
+    </string-array>
+    
+	
+
+	<string-array name="addyarr6">
+        <item>305</item>
+        <item>786</item>
+        <item>954</item>
+        <item>800</item>
+        <item>888</item>
+        <item>866</item>
+        <item>   </item>
+    </string-array>
+	
+
+
+
+
+</resources>
