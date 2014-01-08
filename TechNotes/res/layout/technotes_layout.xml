@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical" >
 
     <View
@@ -9,596 +9,631 @@
         android:layout_height="5dip"
         android:background="#C97221" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="15dp"/>
-
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp"
-        android:weightSum="100" >
-
-        <EditText
-            android:id="@+id/orderView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="67"
-            android:ellipsize="start"
-            android:gravity="center"
-            android:hint="ticket #"
-            android:maxLength="9" >
-
-            <requestFocus />
-        </EditText>
-
-        <EditText
-            android:id="@+id/nameBox"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="33"
-            android:ellipsize="start"
-            android:gravity="center"
-            android:hint="Csr Name"
-            android:inputType="textCapWords|textNoSuggestions" >
-        </EditText>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp"
-        android:weightSum="100" >
-
-        <EditText
-            android:id="@+id/addy"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:hint="1234"
-            android:inputType="number"
-            android:singleLine="true" />
-
-        <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="17"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp"
-            android:prompt="@+id/SW" />
-
-        <EditText
-            android:id="@+id/addy2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="24"
-            android:hint="Main"
-            android:inputType="textCapWords"
-            android:singleLine="true" />
-
-        <Spinner
-            android:id="@+id/spinner3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp" />
-
-        <EditText
-            android:id="@+id/aptBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="19"
-            android:hint="unit #"
-            android:singleLine="true" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="9dp"
-        android:weightSum="100" >
-        
-        <Spinner
-            android:id="@+id/spinnerTn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="14"
-            android:paddingLeft="1dp"
-            android:paddingRight="2dp" 
-            android:layout_marginRight="0dp"/>
-
-        <EditText
-            android:id="@+id/tnBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="trbl #"
-            android:layout_weight="36"
-            android:layout_marginLeft="0dp"
-            android:inputType="phone"
-            android:maxLength="14" />
-        
-        <Spinner
-            android:id="@+id/spinnerCbr"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="14"
-            android:paddingLeft="1dp"
-            android:paddingRight="2dp"/>
-
-        <EditText
-            android:id="@+id/cbrBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="36"
-            android:hint="cbr #"
-            android:inputType="phone"
-            android:maxLength="14" />
-    </LinearLayout>
-
-   <TextView
-        android:layout_width="match_parent"
-        android:layout_height="15dp"/>
-    
-    
-    
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4dip"
-        android:background="#C97221" />
-    
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:gravity="left|top"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp"
-        android:weightSum="100" >
-
-        <Spinner
-            android:id="@+id/spinnerF1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="21"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp"
-            android:prompt="@+id/F1" />
-
-        <EditText
-            android:id="@+id/f1CableBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="27"
-            android:hint="cable"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/f1SpacerComma"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:text=","
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <EditText
-            android:id="@+id/f1PairBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="22"
-            android:hint="pair"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/f1SpacerSlash"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:gravity="center"
-            android:padding="0dp"
-            android:text="/"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <EditText
-            android:id="@+id/f1BpBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="18"
-            android:hint="BP"
-            android:singleLine="true" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp"
-        android:weightSum="100" >
-
-        <Spinner
-            android:id="@+id/spinnerF2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="21"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp"
-            android:prompt="@+id/F2" />
-
-        <EditText
-            android:id="@+id/f2CableBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="27"
-            android:ems="10"
-            android:hint="cable"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/f2SpacerComma"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:gravity="center"
-            android:text=","
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <EditText
-            android:id="@+id/f2PairBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="22"
-            android:ems="10"
-            android:hint="Pair"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/f2SpacerSlash"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:gravity="center"
-            android:text="//"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <EditText
-            android:id="@+id/f2BpBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="18"
-            android:ems="10"
-            android:hint="BP"
-            android:singleLine="true" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp"
-        android:weightSum="100" >
-
-        <Spinner
-            android:id="@+id/spinnerF3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="21"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp"
-            android:prompt="@+id/F3" />
-
-        <EditText
-            android:id="@+id/f3CableBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="27"
-            android:ems="10"
-            android:hint="cable"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/f3SpacerComma"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:gravity="center"
-            android:text=","
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <EditText
-            android:id="@+id/f3PairBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="22"
-            android:ems="10"
-            android:hint="Pair"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/f3SpacerSlash"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:gravity="center"
-            android:text="//"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <EditText
-            android:id="@+id/f3BpBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="18"
-            android:ems="10"
-            android:hint="BP"
-            android:singleLine="true" />
-    </LinearLayout>
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp"
-        android:weightSum="100" >
-
-        <Spinner
-            android:id="@+id/spinnerF4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="21"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp"
-            android:prompt="@+id/F4" />
-
-        <EditText
-            android:id="@+id/f4CableBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="27"
-            android:ems="10"
-            android:hint="cable"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/f4SpacerComma"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:gravity="center"
-            android:text=","
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <EditText
-            android:id="@+id/f4PairBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="22"
-            android:ems="10"
-            android:hint="Pair"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/f4SpacerSlash"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:gravity="center"
-            android:text="//"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <EditText
-            android:id="@+id/f4BpBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="18"
-            android:ems="10"
-            android:hint="BP"
-            android:singleLine="true" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp"
-        android:weightSum="100" >
-
-        <TextView
-            android:id="@+id/xboxSpacer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="21"
-            android:gravity="center"
-            android:text="Xbox:"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <EditText
-            android:id="@+id/addyXbx1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="21"
-            android:inputType="number"
-            android:singleLine="true" />
-
-        <Spinner
-            android:id="@+id/spinnerXbx2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="17"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp"
-            android:prompt="@+id/SW" />
-
-        <EditText
-            android:id="@+id/addyXbx3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="25"
-            android:inputType="textCapWords"
-            android:singleLine="true" />
-
-        <Spinner
-            android:id="@+id/spinnerXbx4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill"
-            android:layout_weight="18"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp"
-        android:weightSum="100" >
-
-        <TextView
-            android:id="@+id/F2TermSpacer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="21"
-            android:gravity="center"
-            android:text="F2 term:"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <EditText
-            android:id="@+id/addyF2Term1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="21"
-            android:inputType="number"
-            android:singleLine="true" />
-
-        <Spinner
-            android:id="@+id/spinnerF2Term2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="17"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp"
-            android:prompt="@+id/SW" />
-
-        <EditText
-            android:id="@+id/addyF2Term3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="25"
-            android:inputType="textCapWords"
-            android:singleLine="true" />
-
-        <Spinner
-            android:id="@+id/spinnerF2Term4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="18"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp"
-        android:weightSum="100" >
-
-        <TextView
-            android:id="@+id/RtSpacer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="21"
-            android:gravity="center"
-            android:text="RT:"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <EditText
-            android:id="@+id/addyRt1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="21"
-            android:inputType="number"
-            android:singleLine="true" />
-
-        <Spinner
-            android:id="@+id/spinnerRt2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="17"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp"
-            android:prompt="@+id/SW" />
-
-        <EditText
-            android:id="@+id/addyRt3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="25"
-            android:inputType="textCapWords"
-            android:singleLine="true" />
-
-        <Spinner
-            android:id="@+id/spinnerRt4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="18"
-            android:paddingLeft="6dp"
-            android:paddingRight="2dp" />
-    </LinearLayout>
-
-    <RelativeLayout
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" 
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp">
+        android:layout_weight="1" >
 
-        <EditText
-            android:id="@+id/memoBox"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/send"
-            android:layout_alignParentTop="true"
-            android:hint="more info:"
-            android:inputType="textMultiLine"
-            android:singleLine="true" />
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <EditText
+                    android:id="@+id/orderView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="67"
+                    android:ellipsize="start"
+                    android:gravity="center"
+                    android:hint="ticket #"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="9" >
+
+                    <requestFocus />
+                </EditText>
+
+                <EditText
+                    android:id="@+id/nameBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="33"
+                    android:ellipsize="start"
+                    android:gravity="center"
+                    android:hint="Csr Name"
+                    android:inputType="textCapWords|textNoSuggestions" >
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <EditText
+                    android:id="@+id/addy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:hint="1234"
+                    android:inputType="number"
+                    android:singleLine="true" />
+
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="17"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp"
+                    android:prompt="@+id/SW" />
+
+                <EditText
+                    android:id="@+id/addy2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="24"
+                    android:hint="Main"
+                    android:inputType="textCapWords"
+                    android:singleLine="true" />
+
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp" />
+
+                <EditText
+                    android:id="@+id/aptBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="19"
+                    android:hint="unit#"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="9dp"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <Spinner
+                    android:id="@+id/spinnerTn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="0dp"
+                    android:layout_weight="14"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="2dp" />
+
+                <EditText
+                    android:id="@+id/tnBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="36"
+                    android:hint="trbl #"
+                    android:inputType="phone"
+                    android:maxLength="14" />
+
+                <Spinner
+                    android:id="@+id/spinnerCbr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="14"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="2dp" />
+
+                <EditText
+                    android:id="@+id/cbrBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="36"
+                    android:hint="cbr #"
+                    android:inputType="phone"
+                    android:maxLength="14" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:background="#C97221" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:gravity="left|top" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <Spinner
+                    android:id="@+id/spinnerF1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="21"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp"
+                    android:prompt="@+id/F1" />
+
+                <EditText
+                    android:id="@+id/f1CableBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="27"
+                    android:hint="cable"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/f1SpacerComma"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text=","
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/f1PairBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="22"
+                    android:hint="pair"
+                    android:inputType="number"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/f1SpacerSlash"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text=" /"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/f1BpBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="18"
+                    android:hint="BP"
+                    android:inputType="number"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <Spinner
+                    android:id="@+id/spinnerF2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="21"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp"
+                    android:prompt="@+id/F2" />
+
+                <EditText
+                    android:id="@+id/f2CableBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="27"
+                    android:ems="10"
+                    android:hint="cable" />
+
+                <TextView
+                    android:id="@+id/f2SpacerComma"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:text=","
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/f2PairBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="22"
+                    android:ems="10"
+                    android:hint="Pair"
+                    android:inputType="number"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/f2SpacerSlash"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:gravity="center"
+                    android:text=" /"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/f2BpBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="18"
+                    android:ems="10"
+                    android:hint="BP"
+                    android:inputType="number"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <Spinner
+                    android:id="@+id/spinnerF3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="21"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp"
+                    android:prompt="@+id/F3" />
+
+                <EditText
+                    android:id="@+id/f3CableBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="27"
+                    android:ems="10"
+                    android:hint="cable"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/f3SpacerComma"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:text=","
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/f3PairBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="22"
+                    android:ems="10"
+                    android:hint="Pair"
+                    android:inputType="number"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/f3SpacerSlash"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:gravity="center"
+                    android:text=" /"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/f3BpBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="18"
+                    android:ems="10"
+                    android:hint="BP"
+                    android:inputType="number"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <Spinner
+                    android:id="@+id/spinnerF4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="21"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp"
+                    android:prompt="@+id/F4" />
+
+                <EditText
+                    android:id="@+id/f4CableBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="27"
+                    android:ems="10"
+                    android:hint="cable"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/f4SpacerComma"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:text=","
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/f4PairBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="22"
+                    android:ems="10"
+                    android:hint="Pair"
+                    android:inputType="number"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/f4SpacerSlash"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:gravity="center"
+                    android:text=" /"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/f4BpBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="18"
+                    android:ems="10"
+                    android:hint="BP"
+                    android:inputType="number"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <TextView
+                    android:id="@+id/xboxSpacer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="21"
+                    android:gravity="center"
+                    android:text="Xbox:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/addyXbx1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="21"
+                    android:ellipsize="start"
+                    android:inputType="textCapWords|textNoSuggestions"
+                    android:singleLine="true" />
+
+                <Spinner
+                    android:id="@+id/spinnerXbx2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="17"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp"
+                    android:prompt="@+id/SW" />
+
+                <EditText
+                    android:id="@+id/addyXbx3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="25"
+                    android:inputType="textCapWords"
+                    android:singleLine="true" />
+
+                <Spinner
+                    android:id="@+id/spinnerXbx4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_weight="18"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <TextView
+                    android:id="@+id/F2TermSpacer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="21"
+                    android:gravity="center"
+                    android:text="F2 term:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/addyF2Term1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="21"
+                    android:ellipsize="start"
+                    android:inputType="textCapWords|textNoSuggestions"
+                    android:singleLine="true" />
+
+                <Spinner
+                    android:id="@+id/spinnerF2Term2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="17"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp"
+                    android:prompt="@+id/SW" />
+
+                <EditText
+                    android:id="@+id/addyF2Term3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="25"
+                    android:inputType="textCapWords"
+                    android:singleLine="true" />
+
+                <Spinner
+                    android:id="@+id/spinnerF2Term4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="18"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <TextView
+                    android:id="@+id/RtSpacer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="21"
+                    android:gravity="center"
+                    android:text="RT:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/addyRt1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="21"
+                    android:ellipsize="start"
+                    android:inputType="textCapWords|textNoSuggestions"
+                    android:singleLine="true" />
+
+                <Spinner
+                    android:id="@+id/spinnerRt2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="17"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp"
+                    android:prompt="@+id/SW" />
+
+                <EditText
+                    android:id="@+id/addyRt3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="25"
+                    android:inputType="textCapWords"
+                    android:singleLine="true" />
+
+                <Spinner
+                    android:id="@+id/spinnerRt4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="18"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="2dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:background="#C97221" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/memoBox"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="bottom"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="add notes here:"
+                    android:lines="4" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="#C97221" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal" >
 
         <Button
             android:id="@+id/send"
+            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
             android:onClick="addUser"
             android:text="Save" />
 
         <Button
             android:id="@+id/button2"
+            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/send"
             android:onClick="viewDetails"
-            android:text="view db" />
+            android:text="popUp" />
 
-        
-    </RelativeLayout>
+        <Button
+            android:id="@+id/view"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="viewRecords"
+            android:text="View" />
+    </LinearLayout>
 
 </LinearLayout>

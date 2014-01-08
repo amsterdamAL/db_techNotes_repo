@@ -20,7 +20,7 @@ public class Message {
 		
 	}
 	
-public static void message(Context context, int date)
+	public static void message(Context context, int date)
 	
 	{
 		Toast.makeText(context, date, Toast.LENGTH_LONG).show();	

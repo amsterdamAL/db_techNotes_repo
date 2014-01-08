@@ -15,7 +15,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.amsterdamAL.technotes.Technotes"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden" >
             <!-- android:theme="@android:style/Theme.NoTitleBar.Fullscreen"-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,10 +26,12 @@
         </activity>
         
         
+        
+        
         <activity
-            android:name="com.amsterdamAL.technotes.Facilities"
-            android:label="Facility INFO" 
-             android:windowSoftInputMode="stateHidden">
+            android:name="com.amsterdamAL.technotes.Records"
+            android:label="Records" 
+             android:windowSoftInputMode="stateHidden"  >
             <!--  android:theme="@android:style/Theme.NoTitleBar" -->
            
             
@@ -39,6 +42,19 @@
             </intent-filter>
         </activity>
         
+        <activity
+            android:name="com.amsterdamAL.technotes.EditRecords"
+            android:label="Edit Record" 
+             android:windowSoftInputMode="stateHidden"  >
+            <!--  android:theme="@android:style/Theme.NoTitleBar" -->
+           
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         
     </application>
 

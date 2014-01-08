@@ -45,7 +45,7 @@
         <item>Ct</item>
         <item>Dr</item>
         <item>Blvd</item>
-        <item>St</item>
+        <item>Rd</item>
         <item> </item>
     </string-array>
     
@@ -62,7 +62,7 @@
         <item>Dr</item>
         <item>Blvd</item>
         <item>Av</item>
-        <item>St</item>
+        <item>Rd</item>
         
     </string-array>
     
@@ -107,9 +107,6 @@
         <item>305</item>
         <item>786</item>
         <item>954</item>
-        <item>800</item>
-        <item>888</item>
-        <item>866</item>
         <item>   </item>
     </string-array>
 	
