@@ -26,6 +26,19 @@
         </activity>
         
         
+        <activity
+            android:name="com.amsterdamAL.technotes.Search"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden" >
+            <!-- android:theme="@android:style/Theme.NoTitleBar.Fullscreen"-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
         
         
         <activity
@@ -45,6 +58,20 @@
         <activity
             android:name="com.amsterdamAL.technotes.EditRecords"
             android:label="Edit Record" 
+             android:windowSoftInputMode="stateHidden"  >
+            <!--  android:theme="@android:style/Theme.NoTitleBar" -->
+           
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.amsterdamAL.technotes.Results"
+            android:label="Search Result..." 
              android:windowSoftInputMode="stateHidden"  >
             <!--  android:theme="@android:style/Theme.NoTitleBar" -->
            

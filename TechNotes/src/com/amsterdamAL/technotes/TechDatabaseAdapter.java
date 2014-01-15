@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -23,12 +24,18 @@ public class TechDatabaseAdapter {
 	static int rowTotal;
 	static int rowCurrent;
 	Context c;
+	String uidSearchResult;
+	public long uidResult;
 	
 	public TechDatabaseAdapter(Context context) {
 		helper = new TechHelper(context);
 		c = context;
 	}
 
+	
+	
+	
+	
 	//insert new record into db
 	public long insertData(String stringFullDate,
 							String jobId,
@@ -50,7 +57,7 @@ public class TechDatabaseAdapter {
 							String numDate,
 							String stringYear){
 		
-		//SQLiteDatabase db = helper.getWritableDatabase();
+		
 		db = helper.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
 		
@@ -548,7 +555,138 @@ public class TechDatabaseAdapter {
 
 	}	
 
+	//search db and display results in Records class
+	public long searchRecords()
+	{
+		
+		 String jobIdSearchString = Search.searchByJobId.getText().toString().trim();
+		 String addressSearchString = Search.searchByAddress.getText().toString().trim().toLowerCase();
+		 String aptSearchString = Search.searchByApt.getText().toString().trim().toLowerCase();
+		 String tnSearchString = Search.searchByTn.getText().toString().trim().toLowerCase();
+		 String cbrSearchString = Search.searchByCbr.getText().toString().trim().toLowerCase();
+	        
+	     cursor = null;
+		 db = helper.getWritableDatabase();
+	     cursor = db.query(TechHelper.TABLE_NAME, null, TechHelper.JOB_ID + "='" + jobIdSearchString + "'", null,
+							null, null, null);	     
+	     
+	     if (cursor!=null && cursor.getCount()!=0){
+	    	 
+     		cursor.moveToFirst();
+	    		 
+ 				int uidIndex = cursor.getColumnIndex(TechHelper.UID);
+     			uidResult = cursor.getLong(uidIndex);
+	 			//Toast.makeText(c, "cursor is not null or 0 AND movetofirst is ture ", Toast.LENGTH_SHORT).show();
+	     }else{
+	    	
+	     		Toast.makeText(c, "no results found..", Toast.LENGTH_SHORT).show();
+		 }
+	     	
+	     
+    	 return uidResult;
+		
+	}
+	
+	//Display search result in the records class
+	public void displayResult(long uid) {
 
+		db = helper.getWritableDatabase();
+		cursor = db.query(TechHelper.TABLE_NAME, null, null, null,
+				null, null, null);
+		
+		rowTotal=cursor.getCount();
+		rowCurrent=cursor.getPosition()+1;
+
+		//loop all rows untill match is found
+		while (cursor.moveToNext()){
+			
+			int uidIndex = cursor.getColumnIndex(TechHelper.UID);
+			long uidResult = cursor.getLong(uidIndex);
+				
+				//once match is found break out
+				if(uid == uidResult){
+					Toast.makeText(c, "flag wasTRUU", Toast.LENGTH_SHORT).show();
+					break;
+				}
+		}
+			
+		
+		//display result 
+		Records.f2TermLeft.setText("");
+		Records.rtLeft.setText("");
+		Records.f2TermView.setText("");
+		Records.rtView.setText("");
+		
+		int dateIndex = cursor.getColumnIndex(TechHelper.DATE);
+		String dateResult = cursor.getString(dateIndex);
+		Records.dateBox.setText("  "+dateResult);
+		int addressIndex = cursor.getColumnIndex(TechHelper.ADDRESS);
+		addressResult = cursor.getString(addressIndex);
+		Records.addyView.setText(addressResult);
+		int jobIdIndex = cursor.getColumnIndex(TechHelper.JOB_ID);
+		String jobIdResult = cursor.getString(jobIdIndex);
+		Records.orderView.setText(jobIdResult);
+		int nameIndex = cursor.getColumnIndex(TechHelper.NAME);
+		String nameResult = cursor.getString(nameIndex);
+		Records.nameView.setText(nameResult);
+		int cbrIndex = cursor.getColumnIndex(TechHelper.CBR);
+		String cbrResult = cursor.getString(cbrIndex);
+		Records.cbrView.setText(cbrResult);
+		int trblTnIndex = cursor.getColumnIndex(TechHelper.TRBL_TN);
+		String trblTnResult = cursor.getString(trblTnIndex);
+		Records.trblTnView.setText(trblTnResult);
+		int f1Index = cursor.getColumnIndex(TechHelper.FONE);
+		String f1Result = cursor.getString(f1Index);
+		Records.f1View.setText(f1Result);
+		int f2Index = cursor.getColumnIndex(TechHelper.FTWO);
+		String f2Result = cursor.getString(f2Index);
+		Records.f2View.setText(f2Result);
+		int f3Index = cursor.getColumnIndex(TechHelper.FTHREE);
+		String f3Result = cursor.getString(f3Index);
+		Records.f3View.setText(f3Result);
+		int f4Index = cursor.getColumnIndex(TechHelper.FFOUR);
+		String f4Result = cursor.getString(f4Index);
+		Records.f4View.setText(f4Result);
+		int f2TermIndex = cursor.getColumnIndex(TechHelper.F2TRM);
+		String f2Term = cursor.getString(f2TermIndex);
+			
+			if (f2Term !=null && !f2Term.isEmpty()){
+				Records.f2TermLeft.setText(" F2 Term:  ");
+				Records.f2TermView.setText(f2Term);
+			}else{
+				Records.f2TermLeft.setText("");
+			}
+		
+		int rtIndex = cursor.getColumnIndex(TechHelper.RT);
+		String rtResult = cursor.getString(rtIndex);
+			if (rtResult !=null && !rtResult.isEmpty()){
+				Records.rtLeft.setText(" RT:  ");
+				Records.rtView.setText(rtResult);
+		}else{
+				Records.rtLeft.setText("");
+		}
+		
+		
+		
+		
+		int memoIndex = cursor.getColumnIndex(TechHelper.MEMO);
+		String memoResult = cursor.getString(memoIndex);
+		Records.memoView.setText(memoResult);
+		
+		//variables for counter on top right corner of activities
+		rowTotal=cursor.getCount();
+		rowCurrent=cursor.getPosition()+1;
+
+		Records.theCount.setText( "( " +rowCurrent+ " of " +rowTotal+ " ) " );
+		cPos = cursor.getPosition();
+				
+	}	
+			
+		
+		
+	
+	
+	
 	
 		//sqlite schema nested class
 		//nested so variables can be accessible 

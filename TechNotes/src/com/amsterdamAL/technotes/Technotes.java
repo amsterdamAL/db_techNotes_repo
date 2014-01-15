@@ -15,7 +15,7 @@ import android.widget.Spinner;
 
 public class Technotes extends Activity implements OnItemSelectedListener {
 
-	EditText nameBox, addy, addy2, aptBox, jobIdBox, cbrBox, tnBox, f1CableBox,
+	static EditText nameBox, addy, addy2, aptBox, jobIdBox, cbrBox, tnBox, f1CableBox,
 			f1PairBox, f1BpBox, f2CableBox, f2PairBox, f2BpBox, f3CableBox,
 			f3PairBox, f3BpBox, f4CableBox, f4PairBox, f4BpBox, addyXbx1,
 			addyXbx3, addyF2Term1, addyF2Term3, addyRt1, addyRt3, memoBox;
@@ -23,11 +23,14 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 	String date, name, address, apt, jobId, trblTn, cbr, f1Cable, f1Pair, f1Bp,
 			f2Cable, f2Pair, f2Bp, f3Cable, f3Pair, f4Cable, f4Pair, f4Bp,
 			f3Bp, memo;
+	static boolean recordsOrResultsFlag;
 
 	// concatenated strings
 	String stringFullAddress, stringFullXbx, stringFullF2Term, stringFullRt,
 			stringFullTn, stringFullCbr, stringFullF1, stringFullF2,
 			stringFullF3, stringFullF4;
+	
+	static String uidResult;
 
 	// spinner related strings
 	String spinner1Str, spinner3Str, spinnerF1Str, spinnerF2Str, spinnerF3Str,
@@ -199,10 +202,7 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 		spinnerF4.setOnItemSelectedListener(this);
 	}
 
-	// adds info to db, starts records activity
-	// calls techhelper.insertData
-	// starts Records.class
-	// which starts techhelper.getAllRecords..
+	// calls techhelper.insertData which inserts data, then calls viewRecords below
 	public void addUser(View view) {
 
 		// gathers user input
@@ -265,11 +265,11 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 			// F2 -------------------------------------
 			StringBuilder sbF2 = new StringBuilder();
 			if (spinnerF2Str.equals("UV") || spinnerF2Str.equals("MRB")
-					|| spinnerF2Str.equals("ABB") || spinnerF2Str.equals("EDX")
+					|| spinnerF2Str.equals("EDX")
 					|| spinnerF2Str.equals("AHJ")
 					|| spinnerF2Str.equals("AHJX")) {
 				sbF2.append(spinnerF2Str + " " + f2Cable + ", " + f2Pair);
-			} else if (spinnerF2Str.equals("NPG") || spinnerF2Str.equals("EPG")) {
+			} else if (spinnerF2Str.equals("NPG") || spinnerF2Str.equals("ABB") || spinnerF2Str.equals("EPG")) {
 				sbF2.append(spinnerF2Str + " " + f2Cable + ", " + f2Pair
 						+ " / " + f2Bp);
 			} else if (spinnerF2Str.equals("xbx")) {
@@ -293,11 +293,11 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 			// F3 -------------------------------------
 			StringBuilder sbF3 = new StringBuilder();
 			if (spinnerF3Str.equals("UV") || spinnerF3Str.equals("MRB")
-					|| spinnerF3Str.equals("ABB") || spinnerF3Str.equals("EDX")
+					|| spinnerF3Str.equals("EDX")
 					|| spinnerF3Str.equals("AHJ")
 					|| spinnerF3Str.equals("AHJX")) {
 				sbF3.append(spinnerF3Str + " " + f3Cable + ", " + f3Pair);
-			} else if (spinnerF3Str.equals("NPG") || spinnerF3Str.equals("EPG")) {
+			} else if (spinnerF3Str.equals("NPG") || spinnerF3Str.equals("ABB") || spinnerF3Str.equals("EPG")) {
 				sbF3.append(spinnerF3Str + " " + f3Cable + ", " + f3Pair
 						+ " / " + f3Bp);
 			} else if (spinnerF3Str.equals("xbx")) {
@@ -317,11 +317,11 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 			// F4 -------------------------------------
 			StringBuilder sbF4 = new StringBuilder();
 			if (spinnerF4Str.equals("UV") || spinnerF4Str.equals("MRB")
-					|| spinnerF4Str.equals("ABB") || spinnerF4Str.equals("EDX")
+					|| spinnerF4Str.equals("EDX")
 					|| spinnerF4Str.equals("AHJ")
 					|| spinnerF4Str.equals("AHJX")) {
 				sbF4.append(spinnerF4Str + " " + f4Cable + ", " + f4Pair);
-			} else if (spinnerF4Str.equals("NPG") || spinnerF4Str.equals("EPG")) {
+			} else if (spinnerF4Str.equals("NPG") || spinnerF4Str.equals("ABB") || spinnerF4Str.equals("EPG")) {
 				sbF4.append(spinnerF4Str + " " + f4Cable + ", " + f4Pair
 						+ " / " + f4Bp);
 			} else if (spinnerF4Str.equals("xbx")) {
@@ -473,19 +473,28 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 		}
 	}
 
-	// temp Button shows last few SQlite database entries in toast
+	// TEMP Button shows last few SQlite database entries in toast
 	public void viewDetails(View view) {
 		String data = techhelper.getAllData();
 		Message.message(this, data);
 	}
 
-	// Button to View other activity
+	// starts Records.class, which starts techhelper.getAllRecords if flag is false..
 	public void viewRecords(View view) {
 
 		Intent i = new Intent(this, Records.class);
 		startActivity(i);
 	}
 
+	// starts Search class
+	public void searchRecords(View view){
+		
+		//recordsOrResultsFlag = true;
+		Intent i = new Intent(this, Search.class);
+		startActivity(i);
+		
+	}
+	
 	// Spinner implemented methods
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
@@ -512,4 +521,20 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 	public void onNothingSelected(AdapterView<?> arg0) {
 		// TODO Auto-generated method stub
 	}
+
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		recordsOrResultsFlag = false;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 }

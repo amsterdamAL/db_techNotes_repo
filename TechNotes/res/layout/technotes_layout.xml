@@ -634,6 +634,14 @@
             android:layout_height="wrap_content"
             android:onClick="viewRecords"
             android:text="View" />
+        
+        <Button
+            android:id="@+id/search"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="searchRecords"
+            android:text="Search" />
     </LinearLayout>
 
 </LinearLayout>
