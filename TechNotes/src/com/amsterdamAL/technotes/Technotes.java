@@ -17,12 +17,12 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 
 	static EditText nameBox, addy, addy2, aptBox, jobIdBox, cbrBox, tnBox, f1CableBox,
 			f1PairBox, f1BpBox, f2CableBox, f2PairBox, f2BpBox, f3CableBox,
-			f3PairBox, f3BpBox, f4CableBox, f4PairBox, f4BpBox, addyXbx1,
-			addyXbx3, addyF2Term1, addyF2Term3, addyRt1, addyRt3, memoBox;
+			f3PairBox, f3BpBox, f4CableBox, f4PairBox, f4BpBox, addyF2Term1, addyRt1, memoBox;
 
 	String date, name, address, apt, jobId, trblTn, cbr, f1Cable, f1Pair, f1Bp,
 			f2Cable, f2Pair, f2Bp, f3Cable, f3Pair, f4Cable, f4Pair, f4Bp,
 			f3Bp, memo;
+	
 	static boolean recordsOrResultsFlag;
 
 	// concatenated strings
@@ -34,13 +34,11 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 
 	// spinner related strings
 	String spinner1Str, spinner3Str, spinnerF1Str, spinnerF2Str, spinnerF3Str,
-			spinnerF4Str, spinnerXbx2Str, spinnerXbx4Str, spinnerF2Term2Str,
-			spinnerF2Term4Str, spinnerRt2Str, spinnerRt4Str, spinnerTnStr,
-			spinnerCbrStr;
+			spinnerF4Str, spinnerTnStr,	spinnerCbrStr;
 	Spinner spinner1, spinner3, spinnerF1, spinnerF2, spinnerF3, spinnerF4,
-			spinnerXbx2, spinnerXbx4, spinnerF2Term2, spinnerF2Term4,
-			spinnerRt2, spinnerRt4, spinnerTn, spinnerCbr;
+			spinnerTn, spinnerCbr;
 
+	
 	// current Date Values to be added to stringBuilder
 	String stringDay;
 	String stringMonth;
@@ -94,20 +92,17 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 		f4CableBox = (EditText) findViewById(R.id.f4CableBox);
 		f4PairBox = (EditText) findViewById(R.id.f4PairBox);
 		f4BpBox = (EditText) findViewById(R.id.f4BpBox);
-		addyXbx1 = (EditText) findViewById(R.id.addyXbx1);
-		spinnerXbx2 = (Spinner) findViewById(R.id.spinnerXbx2);
-		addyXbx3 = (EditText) findViewById(R.id.addyXbx3);
-		spinnerXbx4 = (Spinner) findViewById(R.id.spinnerXbx4);
 		addyF2Term1 = (EditText) findViewById(R.id.addyF2Term1);
-		spinnerF2Term2 = (Spinner) findViewById(R.id.spinnerF2Term2);
-		addyF2Term3 = (EditText) findViewById(R.id.addyF2Term3);
-		spinnerF2Term4 = (Spinner) findViewById(R.id.spinnerF2Term4);
 		addyRt1 = (EditText) findViewById(R.id.addyRt1);
-		spinnerRt2 = (Spinner) findViewById(R.id.spinnerRt2);
-		addyRt3 = (EditText) findViewById(R.id.addyRt3);
-		spinnerRt4 = (Spinner) findViewById(R.id.spinnerRt4);
 		memoBox = (EditText) findViewById(R.id.memoBox);
 
+		spinner1.setFocusable(true);
+		spinner1.setFocusableInTouchMode(true);
+		spinner1.requestFocus();
+		
+		spinner3.setFocusable(true);
+		spinner3.setFocusableInTouchMode(true);
+		spinner3.requestFocus();
 		// setup of spinners
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				this, R.array.addyarr1, android.R.layout.simple_spinner_item);
@@ -142,44 +137,7 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 		spinnerF3.setAdapter(adapter5);
 		spinnerF3.setOnItemSelectedListener(this);
 
-		ArrayAdapter<CharSequence> adapter6 = ArrayAdapter.createFromResource(
-				this, R.array.addyarr11, android.R.layout.simple_spinner_item);
-		adapter6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinnerXbx2.setAdapter(adapter6);
-		spinnerXbx2.setOnItemSelectedListener(this);
-
-		ArrayAdapter<CharSequence> adapter7 = ArrayAdapter.createFromResource(
-				this, R.array.addyarr22, android.R.layout.simple_spinner_item);
-		adapter7.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinnerXbx4.setAdapter(adapter7);
-		spinnerXbx4.setOnItemSelectedListener(this);
-
-		ArrayAdapter<CharSequence> adapter8 = ArrayAdapter.createFromResource(
-				this, R.array.addyarr11, android.R.layout.simple_spinner_item);
-		adapter8.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinnerF2Term2.setAdapter(adapter8);
-		spinnerF2Term2.setOnItemSelectedListener(this);
-
-		ArrayAdapter<CharSequence> adapter9 = ArrayAdapter.createFromResource(
-				this, R.array.addyarr22, android.R.layout.simple_spinner_item);
-		adapter9.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinnerF2Term4.setAdapter(adapter9);
-		spinnerF2Term4.setOnItemSelectedListener(this);
-
-		ArrayAdapter<CharSequence> adapter10 = ArrayAdapter.createFromResource(
-				this, R.array.addyarr11, android.R.layout.simple_spinner_item);
-		adapter10
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinnerRt2.setAdapter(adapter10);
-		spinnerRt2.setOnItemSelectedListener(this);
-
-		ArrayAdapter<CharSequence> adapter11 = ArrayAdapter.createFromResource(
-				this, R.array.addyarr22, android.R.layout.simple_spinner_item);
-		adapter11
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinnerRt4.setAdapter(adapter11);
-		spinnerRt4.setOnItemSelectedListener(this);
-
+		
 		ArrayAdapter<CharSequence> adapter12 = ArrayAdapter.createFromResource(
 				this, R.array.addyarr6, android.R.layout.simple_spinner_item);
 		adapter12
@@ -225,12 +183,11 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 		f4Cable = f4CableBox.getText().toString();
 		f4Pair = f4PairBox.getText().toString();
 		f4Bp = f4BpBox.getText().toString();
-		String addyXbx1Str = addyXbx1.getText().toString();
-		String addyXbx3Str = addyXbx3.getText().toString();
+		
 		String addyF2Term1Str = addyF2Term1.getText().toString();
-		String addyF2Term3Str = addyF2Term3.getText().toString();
+		
 		String addyRt1Str = addyRt1.getText().toString();
-		String addyRt3Str = addyRt3.getText().toString();
+		
 		memo = memoBox.getText().toString();
 
 		// If address is not empty....., Else, toast for more info.
@@ -242,15 +199,7 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 					+ date + ", " + stringYear);
 			stringFullDate = sbDateBuilder.toString();
 
-			// Xbox Full address
-			if (addyXbx1Str != null && !addyXbx1Str.isEmpty()) {
-				StringBuilder sbXbxBuilder = new StringBuilder();
-				sbXbxBuilder.append(addyXbx1Str).append(" ")
-						.append(spinnerXbx2Str).append(" ").append(addyXbx3Str)
-						.append(" ").append(spinnerXbx4Str);
-				stringFullXbx = sbXbxBuilder.toString();
-			}
-
+			
 			// F1 -------------------------------------
 			StringBuilder sbF1 = new StringBuilder();
 			if (spinnerF1Str.equals("Ca") || spinnerF1Str.equals("PG")
@@ -274,14 +223,8 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 						+ " / " + f2Bp);
 			} else if (spinnerF2Str.equals("xbx")) {
 
-				if (addyXbx1Str != null && !addyXbx1Str.isEmpty()) {
-
-					sbF2.append(stringFullXbx + ", " + f2Pair + " / " + f2Bp);
-
-				} else {
-
-					sbF2.append(f2Cable + ", " + f2Pair + " / " + f2Bp);
-				}
+				sbF2.append(f2Cable + ", " + f2Pair + " / " + f2Bp);
+				stringFullXbx = f2Cable;
 
 			} else if (spinnerF2Str.equals("")
 					&& (f2Cable != null && !f2Cable.isEmpty())) {
@@ -302,12 +245,9 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 						+ " / " + f3Bp);
 			} else if (spinnerF3Str.equals("xbx")) {
 
-				if (addyXbx1Str != null && !addyXbx1Str.isEmpty()) {
-					sbF3.append(stringFullXbx + ", " + f3Pair + " / " + f3Bp);
-				} else {
-					sbF3.append(f3Cable + ", " + f3Pair + " / " + f3Bp);
-				}
-
+				sbF3.append(f3Cable + ", " + f3Pair + " / " + f3Bp);
+				stringFullXbx = f3Cable;
+			
 			} else if (spinnerF3Str.equals("")
 					&& (f3Cable != null && !f3Cable.isEmpty())) {
 				sbF3.append(f3Cable + ", " + f3Pair + " / " + f3Bp);
@@ -326,11 +266,8 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 						+ " / " + f4Bp);
 			} else if (spinnerF4Str.equals("xbx")) {
 
-				if (addyXbx1Str != null && !addyXbx1Str.isEmpty()) {
-					sbF4.append(stringFullXbx + ", " + f4Pair + " / " + f4Bp);
-				} else {
-					sbF4.append(f4Cable + ", " + f4Pair + " / " + f4Bp);
-				}
+				sbF4.append(f4Cable + ", " + f4Pair + " / " + f4Bp);
+				stringFullXbx = f4Cable;
 
 			} else if (spinnerF4Str.equals("")
 					&& (f4Cable != null && !f4Cable.isEmpty())) {
@@ -360,21 +297,14 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 
 			// F2Term Full address
 			if (addyF2Term1Str != null && !addyF2Term1Str.isEmpty()) {
-				StringBuilder sbF2TermBuilder = new StringBuilder();
-				sbF2TermBuilder.append(addyF2Term1Str).append(" ")
-						.append(spinnerF2Term2Str).append(" ")
-						.append(addyF2Term3Str).append(" ")
-						.append(spinnerF2Term4Str);
-				stringFullF2Term = sbF2TermBuilder.toString();
+			
+				stringFullF2Term = addyF2Term1Str;
 			}
 
 			// Rt Full address
 			if (addyRt1Str != null && !addyRt1Str.isEmpty()) {
-				StringBuilder sbRtBuilder = new StringBuilder();
-				sbRtBuilder.append(addyRt1Str).append(" ")
-						.append(spinnerRt2Str).append(" ").append(addyRt3Str)
-						.append(" ").append(spinnerRt4Str);
-				stringFullRt = sbRtBuilder.toString();
+			
+				stringFullRt = addyRt1Str;
 			}
 
 			// Full Tn
@@ -437,23 +367,10 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 			f4CableBox.setText("");
 			f4PairBox.setText("");
 			f4BpBox.setText("");
-			// xbx address fields
-			addyXbx1.setText("");
-			spinnerXbx2.setSelection(0);
-			addyXbx3.setText("");
-			spinnerXbx4.setSelection(0);
-			// F2Term address fields
 			addyF2Term1.setText("");
-			spinnerF2Term2.setSelection(0);
-			addyF2Term3.setText("");
-			spinnerF2Term4.setSelection(0);
-			// RT address fields
 			addyRt1.setText("");
-			spinnerRt2.setSelection(0);
-			addyRt3.setText("");
-			spinnerRt4.setSelection(0);
 			memoBox.setText("");
-			// stringFullDateChecker = null;
+			
 			stringFullDate = null;
 			stringFullF2Term = null;
 			stringFullRt = null;
@@ -506,12 +423,6 @@ public class Technotes extends Activity implements OnItemSelectedListener {
 		spinnerF2Str = spinnerF2.getSelectedItem().toString();
 		spinnerF3Str = spinnerF3.getSelectedItem().toString();
 		spinnerF4Str = spinnerF4.getSelectedItem().toString();
-		spinnerXbx2Str = spinnerXbx2.getSelectedItem().toString();
-		spinnerXbx4Str = spinnerXbx4.getSelectedItem().toString();
-		spinnerF2Term2Str = spinnerF2Term2.getSelectedItem().toString();
-		spinnerF2Term4Str = spinnerF2Term4.getSelectedItem().toString();
-		spinnerRt2Str = spinnerRt2.getSelectedItem().toString();
-		spinnerRt4Str = spinnerRt4.getSelectedItem().toString();
 		spinnerTnStr = spinnerTn.getSelectedItem().toString();
 		spinnerCbrStr = spinnerCbr.getSelectedItem().toString();
 	}

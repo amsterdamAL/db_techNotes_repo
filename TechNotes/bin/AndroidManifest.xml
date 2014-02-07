@@ -83,6 +83,20 @@
             </intent-filter>
         </activity>
         
+        <activity
+            android:name="com.amsterdamAL.technotes.MultipleResults"
+            android:label="Search Result..." 
+             android:windowSoftInputMode="stateHidden"  >
+            <!--  android:theme="@android:style/Theme.NoTitleBar" -->
+           
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
     </application>
 
 </manifest>

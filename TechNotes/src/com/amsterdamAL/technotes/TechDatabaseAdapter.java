@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -26,6 +27,8 @@ public class TechDatabaseAdapter {
 	Context c;
 	String uidSearchResult;
 	public long uidResult;
+	SimpleCursorAdapter Sca;
+	static String test;
 	
 	public TechDatabaseAdapter(Context context) {
 		helper = new TechHelper(context);
@@ -684,7 +687,20 @@ public class TechDatabaseAdapter {
 			
 		
 		
-	
+	public SimpleCursorAdapter getAdapterBack(){
+		
+		String monthSearchString = Search.searchByMonth.getText().toString().trim();
+		
+		cursor = null;
+		db = helper.getWritableDatabase();
+	    cursor = db.query(TechHelper.TABLE_NAME, null, TechHelper.MONTH + "='" + monthSearchString + "'", null,
+							null, null, null);	 
+		
+		Toast.makeText(c, "getting adapter", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(c, cursor.getCount(), Toast.LENGTH_SHORT).show();
+		Sca = new SimpleCursorAdapter(c, android.R.layout.simple_list_item_1, cursor, new String[] { TechHelper.NAME }, new int[] { android.R.id.text1 }, 0);
+		return Sca;
+	}
 	
 	
 	

@@ -40,7 +40,8 @@
                     android:gravity="center"
                     android:hint="ticket #"
                     android:inputType="textCapCharacters"
-                    android:maxLength="9" >
+                    android:maxLength="9"
+                    android:nextFocusDown="@+id/nameBox" >
 
                     <requestFocus />
                 </EditText>
@@ -53,7 +54,8 @@
                     android:ellipsize="start"
                     android:gravity="center"
                     android:hint="Csr Name"
-                    android:inputType="textCapWords|textNoSuggestions" >
+                    android:inputType="textCapWords|textNoSuggestions"
+                    android:nextFocusDown="@+id/addy" >
                 </EditText>
             </LinearLayout>
 
@@ -90,7 +92,7 @@
                     android:layout_weight="24"
                     android:hint="Main"
                     android:inputType="textCapWords"
-                    android:singleLine="true" />
+                    android:singleLine="true"/>
 
                 <Spinner
                     android:id="@+id/spinner3"
@@ -98,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="20"
                     android:paddingLeft="6dp"
-                    android:paddingRight="2dp" />
+                    android:paddingRight="2dp"/>
 
                 <EditText
                     android:id="@+id/aptBox"
@@ -106,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="19"
                     android:hint="unit#"
-                    android:singleLine="true" />
+                    android:singleLine="true"/>
             </LinearLayout>
 
             <LinearLayout
@@ -155,6 +157,7 @@
             </LinearLayout>
 
             <View
+                android:layout_marginTop="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:background="#C97221" />
@@ -187,7 +190,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="27"
                     android:hint="cable"
-                    android:singleLine="true" />
+                    android:singleLine="true"/>
 
                 <TextView
                     android:id="@+id/f1SpacerComma"
@@ -249,7 +252,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="27"
                     android:ems="10"
-                    android:hint="cable" />
+                    android:hint="cable"
+                    android:singleLine="true" />
 
                 <TextView
                     android:id="@+id/f2SpacerComma"
@@ -420,58 +424,11 @@
                     android:singleLine="true" />
             </LinearLayout>
 
-            <LinearLayout
+            <View
+                android:layout_marginTop="2dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="9dp"
-                android:layout_marginRight="9dp"
-                android:orientation="horizontal"
-                android:weightSum="100" >
-
-                <TextView
-                    android:id="@+id/xboxSpacer"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="21"
-                    android:gravity="center"
-                    android:text="Xbox:"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <EditText
-                    android:id="@+id/addyXbx1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="21"
-                    android:ellipsize="start"
-                    android:inputType="textCapWords|textNoSuggestions"
-                    android:singleLine="true" />
-
-                <Spinner
-                    android:id="@+id/spinnerXbx2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="17"
-                    android:paddingLeft="6dp"
-                    android:paddingRight="2dp"
-                    android:prompt="@+id/SW" />
-
-                <EditText
-                    android:id="@+id/addyXbx3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="25"
-                    android:inputType="textCapWords"
-                    android:singleLine="true" />
-
-                <Spinner
-                    android:id="@+id/spinnerXbx4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="fill"
-                    android:layout_weight="18"
-                    android:paddingLeft="6dp"
-                    android:paddingRight="2dp" />
-            </LinearLayout>
+                android:layout_height="2dip"
+                android:background="#C97221" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -494,35 +451,12 @@
                     android:id="@+id/addyF2Term1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="21"
+                    android:layout_weight="79"
                     android:ellipsize="start"
                     android:inputType="textCapWords|textNoSuggestions"
                     android:singleLine="true" />
 
-                <Spinner
-                    android:id="@+id/spinnerF2Term2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="17"
-                    android:paddingLeft="6dp"
-                    android:paddingRight="2dp"
-                    android:prompt="@+id/SW" />
-
-                <EditText
-                    android:id="@+id/addyF2Term3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="25"
-                    android:inputType="textCapWords"
-                    android:singleLine="true" />
-
-                <Spinner
-                    android:id="@+id/spinnerF2Term4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="18"
-                    android:paddingLeft="6dp"
-                    android:paddingRight="2dp" />
+                
             </LinearLayout>
 
             <LinearLayout
@@ -546,38 +480,16 @@
                     android:id="@+id/addyRt1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="21"
+                    android:layout_weight="79"
                     android:ellipsize="start"
                     android:inputType="textCapWords|textNoSuggestions"
                     android:singleLine="true" />
 
-                <Spinner
-                    android:id="@+id/spinnerRt2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="17"
-                    android:paddingLeft="6dp"
-                    android:paddingRight="2dp"
-                    android:prompt="@+id/SW" />
-
-                <EditText
-                    android:id="@+id/addyRt3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="25"
-                    android:inputType="textCapWords"
-                    android:singleLine="true" />
-
-                <Spinner
-                    android:id="@+id/spinnerRt4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="18"
-                    android:paddingLeft="6dp"
-                    android:paddingRight="2dp" />
+                
             </LinearLayout>
 
             <View
+                android:layout_marginTop="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:background="#C97221" />
@@ -595,7 +507,7 @@
                     android:ems="10"
                     android:gravity="center"
                     android:hint="add notes here:"
-                    android:lines="4" />
+                    android:lines="5" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

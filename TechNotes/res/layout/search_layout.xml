@@ -1,0 +1,149 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    
+    android:orientation="vertical" >
+	 
+	 <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+	 
+	 
+	 
+	 
+	 <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        
+	     
+	     <EditText
+                    android:id="@+id/searchByJobId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    android:ellipsize="start"
+                    
+                    android:hint="ticket #, Ban, Order# etc.."
+                    android:inputType="textCapCharacters"
+                    android:maxLength="9" >
+          </EditText>
+                    
+	     
+	     	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:orientation="horizontal"
+                android:weightSum="100" >
+	     
+	     		<EditText
+                    android:id="@+id/searchByAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:ellipsize="start"
+                    android:hint="Csr Address ...."
+                    android:layout_weight="70">
+                 </EditText>
+                    
+	     		<EditText
+	     		    android:id="@+id/searchByApt"
+	     		    android:layout_width="0dp"
+	     		    android:layout_height="wrap_content"
+	     		    android:ellipsize="start"
+	     		    android:layout_weight="30"
+	     		    android:hint="apt#" >
+
+                 </EditText>
+        
+	      </LinearLayout>
+
+	     	<EditText
+	     	    android:id="@+id/searchByTn"
+	     	    android:layout_width="match_parent"
+	     	    android:layout_height="wrap_content"
+	     	    android:ems="10"
+	     	    android:hint="Trbl Tn"
+	     	    android:inputType="phone" >
+
+	     	    <requestFocus />
+	     	</EditText>
+
+	     	<EditText
+	     	    android:id="@+id/searchByCbr"
+	     	    android:layout_width="match_parent"
+	     	    android:layout_height="wrap_content"
+	     	    android:ems="10"
+	     	    android:hint="CBR"
+	     	    android:inputType="phone" />
+
+	     	
+	     	<LinearLayout
+	     	    android:layout_width="match_parent"
+	     	    android:layout_height="wrap_content"
+	     	    android:orientation="horizontal"
+	     	    android:weightSum="90" >
+	     	    
+	     	    <EditText
+	     	    android:id="@+id/searchByMonth"
+	     	    android:layout_width="match_parent"
+	     	    android:layout_height="wrap_content"
+	     	    android:ems="10"
+	     	    android:inputType="text"
+	     	    android:hint="Month" 
+	     	    android:layout_weight="30"/>
+	     	    
+	     	    <EditText
+	     	    android:id="@+id/searchByDate"
+	     	    android:layout_width="match_parent"
+	     	    android:layout_height="wrap_content"
+	     	    android:ems="10"
+	     	    android:inputType="number"
+	     	    android:hint="DD"
+	     	    android:layout_weight="30" />
+	     	    
+	     	    <EditText
+	     	    android:id="@+id/searchByYear"
+	     	    android:layout_width="match_parent"
+	     	    android:layout_height="wrap_content"
+	     	    android:ems="10"
+	     	    android:inputType="number"
+	     	    android:hint="YYYY" 
+	     	    android:layout_weight="30"/>
+	     	</LinearLayout>
+	     	
+
+	     	
+
+	      </LinearLayout>
+	      
+   </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal" >
+
+        
+        <Button
+            android:id="@+id/searchAll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="searchAll"
+            android:text="search" />
+    </LinearLayout>
+    
+    
+    
+
+</LinearLayout>
